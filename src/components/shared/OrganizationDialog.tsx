@@ -64,7 +64,7 @@ const OrganizationActionsDialog: React.FC<OrganizationActionsDialogProps> = ({ i
 
   return (
     <Dialog open={isOpen} onOpenChange={(newOpen) => !isSubmitting && onClose()}>
-      <DialogContent className="max-w-lg mx-auto p-6 bg-gray-800 text-white">
+      <DialogContent className="max-w-sm sm:max-w-md md:max-w-lg mx-auto p-6 sm:p-4 md:p-6 bg-gray-800 text-white rounded-lg">
         <DialogHeader>
           <DialogTitle>Organization Actions</DialogTitle>
         </DialogHeader>
@@ -75,7 +75,7 @@ const OrganizationActionsDialog: React.FC<OrganizationActionsDialogProps> = ({ i
             value={memberAddress}
             onChange={(e) => setMemberAddress(e.target.value)}
             placeholder="Enter member address"
-            className="mt-2"
+            className="mt-2 w-full p-2 sm:p-3 bg-gray-700 text-white rounded"
             disabled={isSubmitting}
           />
           {error && <p className="text-red-500 mt-2">{error}</p>}
@@ -83,14 +83,14 @@ const OrganizationActionsDialog: React.FC<OrganizationActionsDialogProps> = ({ i
         <DialogFooter>
           <Button 
             onClick={() => handleAction('add')} 
-            className="bg-green-500 text-white"
+            className="bg-green-500 text-white p-2 sm:p-3 w-full sm:w-auto"
             disabled={isSubmitting || !memberAddress}
           >
             {isSubmitting ? 'Add Member' : 'Add Member'}
           </Button>
           <Button 
             onClick={() => handleAction('remove')} 
-            className="bg-red-500 text-white"
+            className="bg-red-500 text-white p-2 sm:p-3 w-full sm:w-auto"
             disabled={isSubmitting || !memberAddress}
           >
             {isSubmitting ? 'Remove Member' : 'Remove Member'}

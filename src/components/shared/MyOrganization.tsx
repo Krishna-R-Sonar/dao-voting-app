@@ -91,7 +91,7 @@ const MyOrganizations: React.FC = () => {
   };
 
   return (
-    <div className="p-12 text-white max-w-screen-xl mx-auto">
+    <div className="p-6 sm:p-12 text-white max-w-screen-xl mx-auto">
       <div className="mb-6 flex justify-center">
         <CreateOrganizationDialog onOrganizationCreated={fetchOrganizations} />
       </div>
@@ -106,14 +106,14 @@ const MyOrganizations: React.FC = () => {
         <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-center">
           Organizations You Admin
         </h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
           {adminOrganizations.map((org) => (
             <div
               key={org.id}
               className="relative flex flex-col items-center shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl group"
               style={{
-                width: '320px',
-                height: '300px',
+                /* width: '320px', */
+                /* height: '300px', */
                 background: 'linear-gradient(to bottom, #003d6b, #00557d)',
               }}
               onClick={() => handleOrgClick(org, true)}
@@ -141,14 +141,14 @@ const MyOrganizations: React.FC = () => {
         <h2 className="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-center">
           Organizations You're a Member Of
         </h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
           {memberOrganizations.map((org) => (
             <div
               key={org.id}
               className="relative flex flex-col items-center shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl group"
               style={{
-                width: '320px',
-                height: '300px',
+                /* width: '320px', */
+                /* height: '300px', */
                 background: 'linear-gradient(to bottom, #004d70, #008793)',
               }}
               onClick={() => handleOrgClick(org, false)}

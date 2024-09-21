@@ -95,7 +95,7 @@ const CreateProposalDialog: React.FC<CreateProposalDialogProps> = ({ open, onOpe
 
   return (
     <Dialog open={open} onOpenChange={(newOpen) => !isSubmitting && onOpenChange(newOpen)}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="p-4 sm:p-6 sm:max-w-[425px] mx-auto">
         <DialogHeader>
           <DialogTitle>Create New Proposal</DialogTitle>
         </DialogHeader>
@@ -126,7 +126,7 @@ const CreateProposalDialog: React.FC<CreateProposalDialogProps> = ({ open, onOpe
               />
             ))}
             {voteOptions.length < 4 && (
-              <Button onClick={addOption} className="mt-2" disabled={isSubmitting}>
+              <Button onClick={addOption} className="mt-2 w-full sm:w-auto" disabled={isSubmitting}>
                 Add Option
               </Button>
             )}
@@ -145,7 +145,7 @@ const CreateProposalDialog: React.FC<CreateProposalDialogProps> = ({ open, onOpe
           </div>
         </div>
         {error && <p className="text-red-500 mt-2">{error}</p>}
-        <DialogFooter>
+        <DialogFooter className='flex flex-col sm:flex-row gap-2'>
           <Button onClick={handleCreateProposalSubmit} className="bg-gradient-to-r from-pink-500 to-yellow-500" disabled={isSubmitting}>
             {isSubmitting ? 'Submitting...' : 'Submit'}
           </Button>
