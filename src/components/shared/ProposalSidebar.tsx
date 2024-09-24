@@ -131,8 +131,8 @@ const ProposalSidebar: React.FC<ProposalSidebarProps> = ({ open, onClose, daoId,
   };
 
   return (
-    <div className={`fixed top-0 right-0 w-96 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : 'translate-x-full'} overflow-y-auto`}>
-      <div className="p-6 flex flex-col h-full">
+    <div className={`fixed top-0 right-0 w-full sm:w-96 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : 'translate-x-full'} overflow-y-auto`}>
+      <div className="p-6 sm:p-6 flex flex-col h-full">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800">Proposal Details</h2>
           <Button variant="ghost" onClick={onClose} className="p-1">

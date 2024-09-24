@@ -90,13 +90,13 @@ const CreateOrganizationDialog: React.FC<CreateOrganizationDialogProps> = ({ onO
     <>
       <Button
         onClick={handleOpenDialog}
-        className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white text-xl mb-6 px-4 py-2 rounded-3xl flex items-center justify-items-start w-64 h-16 text-center overflow-hidden"
+        className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white text-base md:text-xl mb-6 px-4 py-2 rounded-3xl w-full sm:w-64 h-12 sm:h-16 text-center"
       >
         Create Organization
       </Button>
 
       <Dialog open={isDialogOpen} onOpenChange={handleCloseDialog}>
-        <DialogContent className="max-w-lg mx-auto p-6">
+        <DialogContent className="w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto p-6">
           <DialogHeader>
             <DialogTitle>Create an Organization</DialogTitle>
           </DialogHeader>
@@ -107,7 +107,7 @@ const CreateOrganizationDialog: React.FC<CreateOrganizationDialogProps> = ({ onO
                 id="title"
                 placeholder="Enter organization title"
                 {...register('title')}
-                className="mt-2"
+                className="mt-2 w-full"
                 disabled={isSubmitting}
               />
               {errors.title && <p className="text-red-500 mt-1">{errors.title.message}</p>}
@@ -118,13 +118,13 @@ const CreateOrganizationDialog: React.FC<CreateOrganizationDialogProps> = ({ onO
                 id="imageUrl"
                 placeholder="Enter organization image URL"
                 {...register('imageUrl')}
-                className="mt-2"
+                className="mt-2 w-full"
                 disabled={isSubmitting}
               />
               {errors.imageUrl && <p className="text-red-500 mt-1">{errors.imageUrl.message}</p>}
             </div>
             <DialogFooter>
-              <Button type="submit" className="bg-gradient-to-r from-pink-500 to-yellow-500 text-black font-semibold rounded-lg shadow-lg" disabled={isSubmitting}>
+              <Button type="submit" className="bg-gradient-to-r from-pink-500 to-yellow-500 text-black font-semibold rounded-lg shadow-lg w-full sm:w-auto" disabled={isSubmitting}>
                 {isSubmitting ? 'Submitting...' : 'Submit'}
               </Button>
               <Button type="button" variant="ghost" onClick={handleCloseDialog} disabled={isSubmitting}>

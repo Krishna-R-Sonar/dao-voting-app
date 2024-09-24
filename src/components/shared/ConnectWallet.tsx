@@ -57,13 +57,13 @@ const ConnectWallet: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-start sm:items-center w-full px-4 py-2">
       {walletAddress ? (
-        <div className="flex flex-col items-start">
-          <p className="text-white mb-4">Connected: {walletAddress}</p>
+        <div className="flex flex-col items-start sm-items-center w-full">
+          <p className="text-white text-sm sm:text-base lg:text-lg mb-4">Connected: {walletAddress}</p>
           <button
             onClick={disconnectWallet}
-            className="bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 text-white text-xl mb-6 px-4 py-2 rounded-3xl flex items-center justify-center w-64 h-16 text-center overflow-hidden"
+            className="bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 text-white text-base sm:text-lg lg:text-xl mb-6 px-4 py-2 rounded-3xl w-full max-w-xs h-12 sm:h-16"
           >
             Disconnect Wallet
           </button>
@@ -71,7 +71,7 @@ const ConnectWallet: React.FC = () => {
       ) : (
         <button
           onClick={connectWallet}
-          className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white text-xl mb-6 px-4 py-2 rounded-3xl flex items-center justify-center w-64 h-16 text-center overflow-hidden"
+          className="bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white text-base sm:text-lg lg:text-xl mb-6 px-4 py-2 rounded-3xl w-full max-w-xs h-12 sm:h-16"
         >
           Connect Wallet
         </button>
